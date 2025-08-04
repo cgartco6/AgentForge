@@ -26,7 +26,7 @@ echo Starting backend server...
 start /B flask run --host=0.0.0.0 --port=5000
 
 REM Wait for server to start
-timeout /t 5 /nobreak >nul
+timeout /t 8 /nobreak >nul
 
 REM Open the website in default browser
 echo Opening AgentForge in your browser...
