@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentForge - AI Agent Ecosystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-robot"></i>
+            <span>AgentForge</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#agents">Agents</a></li>
+                <li><a href="#create">Create</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+        <a href="#create" class="cta-button">
+            <i class="fas fa-bolt"></i> Get Started
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Create Custom AI Agents That Build More Agents</h1>
+            <p>Revolutionary AI ecosystem that designs, deploys, and manages specialized agents to handle any project from app development to financial security.</p>
+            <div class="hero-actions">
+                <a href="#agents" class="cta-button">
+                    <i class="fas fa-eye"></i> Explore Agents
+                </a>
+                <a href="#create" class="btn btn-outline">
+                    <i class="fas fa-code"></i> Create Now
+                </a>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- Agents Section -->
+    <section id="agents" class="section">
+        <div class="section-title">
+            <h2>AI Agent Ecosystem</h2>
+            <p>Our Director Agent creates and manages specialized sub-agents to handle every aspect of your project</p>
+        </div>
+        
+        <div class="agent-grid">
+            <!-- Director Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="agent-title">Director Agent</h3>
+                </div>
+                <p class="agent-description">The master controller that creates and coordinates all other agents in the ecosystem.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('director')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('director')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Marketing Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="agent-title">Marketing Agent</h3>
+                </div>
+                <p class="agent-description">Promotes your services across all digital channels with optimized campaigns.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('marketing')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('marketing')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Social Media Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3 class="agent-title">Social Media Agent</h3>
+                </div>
+                <p class="agent-description">Manages and posts content across all platforms 24/7.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('social_media')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('social_media')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Security Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="agent-title">Security Agent</h3>
+                </div>
+                <p class="agent-description">Military-grade protection against theft, cloning, and unauthorized access.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('security')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('security')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Self-Healing Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="agent-title">Self-Healing Agent</h3>
+                </div>
+                <p class="agent-description">Automatically updates, repairs, and improves the system without downtime.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('self_healing')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('self_healing')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Training Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="agent-title">Training Agent</h3>
+                </div>
+                <p class="agent-description">Trains and retrains models using the latest data to maintain peak performance.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('training')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('training')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Compliance Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="agent-title">Compliance Agent</h3>
+                </div>
+                <p class="agent-description">Ensures all operations meet South African and international regulatory requirements.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('compliance')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('compliance')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Payments Agent -->
+            <div class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="agent-title">Payments Agent</h3>
+                </div>
+                <p class="agent-description">Handles all financial transactions, distributions, and upgrades.</p>
+                <div class="agent-actions">
+                    <button class="btn btn-primary" onclick="createAgent('payments')">
+                        <i class="fas fa-plus"></i> Create
+                    </button>
+                    <button class="btn btn-outline" onclick="showAgentInfo('payments')">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creation Section -->
+    <section id="create" class="section" style="background: rgba(15, 23, 42, 0.5);">
+        <div class="section-title">
+            <h2>Create & Generate</h2>
+            <p>Build custom apps, scripts, and AI agents directly from your browser</p>
+        </div>
+        
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-title">AgentForge Terminal</div>
+            </div>
+            <div class="terminal-body" id="terminal-output">
+                <div class="terminal-line">AgentForge Terminal v1.0 - Type 'help' for commands</div>
+                <div class="terminal-line">> Initializing Director Agent...</div>
+                <div class="terminal-line success">> Director Agent initialized successfully</div>
+                <div class="terminal-line">> Ready to create agents and generate code</div>
+            </div>
+            <div class="terminal-input">
+                <input type="text" id="terminal-input" placeholder="Enter command (e.g., create marketing_agent)">
+                <button onclick="processCommand()">Run</button>
+            </div>
+        </div>
+        
+        <div class="code-generator">
+            <h3>Code Generator</h3>
+            <p>Describe what you want to build, and our AI will generate the code</p>
+            
+            <div class="form-group">
+                <label for="language">Programming Language</label>
+                <select id="language">
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="html">HTML/CSS</option>
+                    <option value="java">Java</option>
+                    <option value="csharp">C#</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Describe what you want to build</label>
+                <textarea id="description" placeholder="Describe the functionality you want to create..."></textarea>
+            </div>
+            
+            <button class="cta-button" onclick="generateCode()">
+                <i class="fas fa-code"></i> Generate Code
+            </button>
+            
+            <div class="code-output" id="code-output">
+                // Generated code will appear here
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="section-title">
+            <h2>Advanced Features</h2>
+            <p>Our AI ecosystem comes with powerful capabilities for complex projects</p>
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Agent Creation</h3>
+                <p>Director Agent can create specialized agents on demand for any task</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sync"></i>
+                </div>
+                <h3>Self-Healing<
