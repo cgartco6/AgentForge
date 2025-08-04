@@ -1,5 +1,6 @@
 Flask==2.3.2
 cryptography==41.0.2
+psutil==5.9.5
+pywin32==306
 requests==2.31.0
 python-dotenv==1.0.0
-pywin32==306
