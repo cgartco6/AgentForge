@@ -5,13 +5,22 @@ import threading
 import os
 import sys
 
-app = Flask(__name__, static_folder='../frontend', template_folder='../frontend')
+app = Flask(__name__)
 security_manager = SecurityManager()
 director = DirectorAgent()
 
+# Create core agents on startup
+core_agents = [
+    "marketing", "social_media", "security",
+    "self_healing", "training", "compliance", "payments"
+]
+
+for agent_type in core_agents:
+    director.create_agent(agent_type)
+
 @app.route('/')
 def home():
-    return app.send_static_file('index.html')
+    return "AgentForge AI Ecosystem is running"
 
 @app.route('/create-agent', methods=['POST'])
 def create_agent():
@@ -47,10 +56,19 @@ def execute_task():
         return jsonify({"error": "Agent not found"}), 404
     
     try:
-        # Run in a separate thread to avoid blocking
-        thread = threading.Thread(target=agent.execute, args=(task, params))
+        # Run in background thread
+        def task_runner():
+            try:
+                result = agent.execute(task, params)
+                print(f"Task completed: {task} by {agent_id}")
+            except Exception as e:
+                print(f"Task failed: {e}")
+        
+        thread = threading.Thread(target=task_runner)
+        thread.daemon = True
         thread.start()
-        return jsonify({"status": "task started", "task": task})
+        
+        return jsonify({"status": "task_started", "task": task})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -76,13 +94,17 @@ def generate_code():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/system-status', methods=['GET'])
+def system_status():
+    return jsonify({
+        "status": "operational",
+        "agents_count": len(director.agents),
+        "resource_usage": {
+            "cpu": psutil.cpu_percent(),
+            "memory": psutil.virtual_memory().percent
+        }
+    })
+
 if __name__ == '__main__':
-    # Check if we're running in a PyInstaller bundle
-    if getattr(sys, 'frozen', False):
-        template_folder = os.path.join(sys._MEIPASS, 'templates')
-        app.template_folder = template_folder
-        static_folder = os.path.join(sys._MEIPASS, 'static')
-        app.static_folder = static_folder
-    
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
